@@ -36,8 +36,7 @@ public class Client {
 		}else
 			System.out.println("limit wyczerpany :( ");
 	}
-	void removePhone(Phone phone) {
-		if(boughtphones.size()<5) {
+	void removePhone(int phone) {
 			boughtphones.remove(boughtphones);
 		}
 	}
