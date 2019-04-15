@@ -3,8 +3,8 @@ package sklep;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Witamy w nszym Sklepie ELEKTRO posiadamy poniższy asortymanet");
-
+		System.out.println("Witamy w nszym Sklepie ELEKTRO posiadamy poniżsy asortymanet");
+		
 		Phone[] mobilePhones = createPhones();
 
 		showPhoneDetails(mobilePhones);
@@ -14,9 +14,9 @@ public class Main {
 		showTvs(tvs);
 		Client klient1 = new Client(1, "Jan", "Kowalski");
 		Client klient2 = new Client(2, "Marek", "Chrzan");
-
+		
 		Shop elektro = new Shop("elektro");
-
+		
 		elektro.addNewPhone(mobilePhones[0]);
 		elektro.addNewPhone(mobilePhones[1]);
 		elektro.addNewPhone(mobilePhones[2]);
@@ -27,8 +27,9 @@ public class Main {
 		elektro.addNewTv(tvs[2]);
 		elektro.addNewTv(tvs[3]);
 		elektro.addNewTv(tvs[4]);
+		elektro.addNewTv(tvs[5]);
 		System.out.println("-----------------------------");
-
+		
 //		Phone newSamsung = elektro.getPhoneById(2);
 //		if(newSamsung != null) {
 //			newSamsung.showDetails();
@@ -48,24 +49,25 @@ public class Main {
 //		elektro.getTvById(3);
 //		elektro.getTvById(4);
 //		elektro.getTvById(5);
-
+		
 		System.out.println("-----------------------------");
 		klient1.buyPhone(elektro.getPhoneById(2));
 		klient1.buyTv(elektro.getTvById(3));
-		klient2.buyPhone(elektro.getPhoneById(4));
+		klient2.buyPhone(elektro.getPhoneById(3));
 		klient2.buyTv(elektro.getTvById(2));
+		klient2.buyTv(elektro.getTvById(6));
+		klient2.buyPhone(elektro.getPhoneById(2));
 		klient2.removePhone(elektro.getPhoneById(3));
-		klient2.buyPhone(elektro.getPhoneById(4));
-
-
+		
+		
 		klient1.showDetails();
 		System.out.println("++++++++------++++++");
 		klient2.showDetails();
-
-
-
-
-	}
+		
+		
+		
+		
+	}	
 
 
 	private static Tv[] createTvs() {
@@ -74,7 +76,8 @@ public class Main {
 		Tv toshiba = new Tv(3, "toshiba", "mini", 15);
 		Tv lg = new Tv(4, "LG", "medium", 32);
 		Tv philips = new Tv(5, "philips", "max", 39);
-		Tv[] tvs = { rubin, grundig, lg, philips, toshiba };
+		Tv medion = new Tv(6, "medion"," maximus ",75);
+		Tv[] tvs = { rubin, grundig, lg, philips, toshiba, medion };
 		return tvs;
 	}
 
@@ -88,8 +91,8 @@ public class Main {
 		Phone[] mobilePhones = { nokia, samsung, xiaomi, sony, apple };
 		return mobilePhones;
 	}
-
-
+	
+	
 	private static void showPhoneDetails(Phone[] mobilePhones) {
 		// Arrays.stream(mobilePhones).forEach(p -> p.showDetails());
 		System.out.println("------ MOBILE PHONES ------");
@@ -104,6 +107,6 @@ public class Main {
 			tv.showDetails();
 		}
 	}
-
+	
 
 }
