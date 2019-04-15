@@ -38,7 +38,7 @@ public class Client {
 	}
 	void removePhone(Phone phone) {
 		if(boughtphones.size()<5) {
-			boughtphones.clear();
+			boughtphones.remove(boughtphones);
 		}
 	}
 }
