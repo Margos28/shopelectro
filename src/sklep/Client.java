@@ -37,7 +37,7 @@ public class Client {
 			System.out.println("limit wyczerpany :( ");
 	}
 	void removePhone(int phone) {
-			boughtphones.remove(boughtphones);
+			boughtphones.remove(phone);
 		}
 	}
 }
