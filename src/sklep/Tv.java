@@ -5,22 +5,29 @@ public class Tv {
 	private String brand;
 	private String model;
 	private int resolution;
-
-	Tv (int id,String brand, String model,int resolution)
+	private int price;
+	
+	Tv (int id,String brand, String model,int resolution, int price)
 	{
 		this.id = id;
 		this.brand = brand;
 		this.model = model;
 		this.resolution = resolution;
+		this.price = price;
 	}
 	void showDetails() {
-		System.out.println("marka TV: " + this.brand + " model: "+ this.model + " przekątna: "+ this.resolution + " cali");
+		System.out.println(this.toString());
+//		System.out.println("marka TV: " + this.brand + " model: "+ this.model + " przekątna: "+ this.resolution + " cali "  + "cena: "+ this.price);
 	}
 	int getId() {
 		return this.id;
 	}
-
-	public String toString() {
-		return "marka TV: " + this.brand + " model: "+ this.model + " przek�tna: "+ this.resolution + " cali";
+	int getPrice() {
+		return this.price;
 	}
+	
+	public String toString() {
+		return "marka TV: " + this.brand + " model: "+ this.model + " przekątna: "+ this.resolution + " cali" + ", cena: "+ this.price;
+	}
+	
 }
